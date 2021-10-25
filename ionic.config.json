@@ -1,5 +1,7 @@
 {
   "name": "retro-opencv",
-  "integrations": {},
+  "integrations": {
+    "cordova": {}
+  },
   "type": "angular"
 }

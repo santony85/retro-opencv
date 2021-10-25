@@ -1,20 +1,44 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>
-      Blank
-    </ion-title>
-  </ion-toolbar>
-</ion-header>
+
 
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Blank</ion-title>
-    </ion-toolbar>
-  </ion-header>
+  <div style="position: fixed;width:100%;height:100%;" 
+    [class.reduceV]="scalev === 0"
+    [style.z-index]="zvid"
 
-  <div id="container">
-    <strong>Ready to create an app?</strong>
-    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
+    [style.bottom]="mvidb+'%'"
+    [style.left]="mvidt+'%'"
+  >
+    <div style="position: fixed;width:100%;height:100%;transform:translate(0%, 0%);"> 
+        <img    #imgInput     id="imgInput" height="600" width="800"     style="position:absolute;top:0px;left:0px;visibility: hidden;">
+        <canvas #canvasOutput 
+          [style.transform]="scalefact" 
+          id="canvasOutput" height="600" width="800" style="position:absolute;top:0px;left:0px;z-index:500;"></canvas>
+        <div style="position: fixed;width:100%;height:100%" >
+          <iframe #canvasInput  
+          [style.transform]="scalefact" 
+          id="canvasInput" [src]="openURLXX()" allowfullscreen style="position:absolute;top:0px;left:0px;width:100%;height:100%;"></iframe>
+        </div>
+        <div *ngIf="scalev == 0"  style="top:0;left:0;width:100%;height:100%;position:absolute;z-index:10000;border: 4px solid cornflowerblue;" (click)="setvid()"></div>
+    </div>
+  </div>  
+
+  <div style="position: fixed;width:100%;height:100%;" 
+      [class.reduceM]="scalem === 0"
+      [style.z-index]="zmap">  
+
+      <div id="mapmb" style="width:100%; height:100%;" class="mmap"></div>
+      <div *ngIf="scalem == 0" style="top:0;left:0;width:100%;height:100%;position:absolute;z-index:10000;border: 2px solid cornflowerblue;" (click)="setmap()"></div>
+
   </div>
+    <div style="position: fixed;width:100%;height:64px;top:0;left:0;z-index:2000;background: rgba(250,250,250,0.8);">  
+      <ion-row>
+        <ion-col size="1"><img src="assets/larrowoff.png" height="60" width="60" style="margin-top: -5px;"></ion-col>
+        <ion-col size="4">Dir 250m</ion-col>
+        <ion-col size="2">Distance</ion-col>
+        <ion-col size="4">38 km/h</ion-col>
+        <ion-col size="1"><img src="assets/rarrowon.png" height="60" width="60" style="margin-top: -5px;"></ion-col>
+      </ion-row>
+
+  </div>
+
 </ion-content>

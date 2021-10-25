@@ -25,3 +25,17 @@
 #container a {
   text-decoration: none;
 }
+
+.reduceV{
+  transform: scale(0.3) !important;
+  z-index:900;
+  top:34%; 
+  left:-34%
+}
+
+.reduceM{
+  transform: scale(0.3) !important;
+  z-index:1000;
+  top:34% !important; 
+  left:-34%  !important;
+}

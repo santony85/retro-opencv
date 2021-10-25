@@ -32,7 +32,7 @@
               }
             ],
             "styles": ["src/theme/variables.scss", "src/global.scss"],
-            "scripts": [],
+            "scripts": ["src/assets/opencv/asm/3.4/opencvmin.js"],
             "aot": false,
             "vendorChunk": true,
             "extractLicenses": false,
